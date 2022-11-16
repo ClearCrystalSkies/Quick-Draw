@@ -1,0 +1,17 @@
+body{
+    background-color: paleturquoise;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#score{
+    font-size: medium;
+    margin-left: 20px;
+    float: left;
+}
+#timer{
+    font-size: medium;
+    margin-right: 20px;
+    float: right;
+}
+#sketch2Bdrawn{
+    color: midnightblue;
+}
