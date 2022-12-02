@@ -6,3 +6,12 @@ var timer_checker = "";
 var answer_holder ="";
 var score = 00;
 document.getElementById("sketch2Bdrawn").innerHTML = "Sketch to be drawn : "+ Element_of_array;
+function preload(){}
+function setup(){}
+function draw() {}
+function check_sketch(){}
+function UpdateCanvas(){
+    background("white");
+    console.log(quick_draw_data_set);
+
+}
