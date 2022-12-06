@@ -6,6 +6,19 @@ var timer_checker = "";
 var answer_holder ="";
 var score = 00;
 var drawn_sketch="";
+
+function classifyCanvas() {
+    classifier.classify(canvas, gotResults);
+}
+function gotResults(error, results) {
+    if (error) {
+        console.log(error);
+    }
+    console.log(results);
+    drawn_sketch = results[0].label;
+    document.getElementById("sketchName").innerHTML = "Your Sketch: " + drawn_sketch;
+    document.getElementById("confidence").innerHTML = "Confidence: " + Math.round(results[0].confidence*100)+"%";
+}
 function preload(){
     classifier = ml5.imageClassifier('DoodleNet');
     document.getElementById("sketch2Bdrawn").innerHTML = "Sketch to be drawn : "+ Element_of_array;
@@ -45,17 +58,4 @@ function check_sketch(){
 function UpdateCanvas(){
     background("white");
     console.log(Element_of_array);
-}
-
-function classifyCanvas() {
-    classifier.classify(canvas, gotResults);
-}
-function gotResults(error, results) {
-    if (error) {
-        console.log(error);
-    }
-    console.log(results);
-    drawn_sketch = results[0].label;
-    document.getElementById("sketchName").innerHTML = "Your Sketch: " + drawn_sketch;
-    document.getElementById("confidence").innerHTML = "Confidence: " + Math.round(results[0].confidence*100)+"%";
 }
